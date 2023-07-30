@@ -24,7 +24,7 @@ Processor.getLayout = function getLayout(page){
 }
 
 // export const getStaticProps = async() => {
-//   const res = await fetch("http://localhost:5000/processor")
+//   const res = await fetch("https://pc-builder-server-phi.vercel.app/processor")
 //   const data = await res.json()
 //   return{
 //     props :{
