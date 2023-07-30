@@ -6,8 +6,7 @@ import { useSelector } from 'react-redux'
 
 const BuilderPage = () => {
   const {products, status} = useSelector((state) => state.cart)
-  console.log(products);
-  console.log("status", status);
+
 
   let addCpu;
   let addMonitor;

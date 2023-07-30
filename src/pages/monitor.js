@@ -22,3 +22,14 @@ MonitorPage.getLayout = function getLayout(page){
     <RootLayout>{page}</RootLayout>
   )
 }
+
+// export const getServerSideProps = async() => {
+//  // const res = await fetch("https://pc-builder-server-phi.vercel.app/monitor")
+//   const res = await fetch("https://pc-builder-pi-ten.vercel.app/monitor")
+//   const data = await res.json()
+//   return{
+//     props :{
+//       allMonitor: data
+//     }
+//   }
+// }

@@ -6,6 +6,7 @@ import { Dropdown, Space } from "antd";
 import { useState } from "react";
 import styles from "@/styles/Home.module.css"
 import Link from "next/link";
+import { signOut } from "next-auth/react"
 
 const items = [
   {
@@ -80,6 +81,7 @@ const items = [
 
 const RootLayout = ({ children }) => {
   const [openMenu, setOpenMenu] = useState(false);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -195,6 +197,18 @@ function AppMenu({ isInline = false }) {
             <button className="cursor-pointer  border border-[#3749bb] px-5 text-white rounded-md bg-[#3749bb] text-sm h-10"><Link href="/builder">PC Builder</Link></button>
           ),
         },
+        {
+          key: "5",
+          label: (
+            <button className="cursor-pointer  border border-[#3749bb] px-5 text-white rounded-md bg-[#3749bb] text-sm h-10"><Link href="/login">Login</Link></button>
+          ),
+        },
+        {
+          label: (
+            <button onClick={() => signOut()} className="cursor-pointer  border border-[#3749bb] px-5 text-white rounded-md bg-[#3749bb] text-sm h-10">Logout</button>
+          ),
+        },
+      
       ]}
     />
     

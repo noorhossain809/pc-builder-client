@@ -5,7 +5,6 @@ import ProductCard from '@/components/UI/ProductCard';
 
 const Processor = () => {
   const {data: allProcessor} = useGetProcessorQuery()
-  console.log("allProcessor", allProcessor);
     return (
         <div>
             {
