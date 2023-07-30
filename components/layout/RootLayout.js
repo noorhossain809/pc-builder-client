@@ -123,7 +123,7 @@ const RootLayout = ({ children }) => {
         }}
       >
         <div
-          className="site-layout-content bg-slate-200 h-screen"
+          className="site-layout-content bg-slate-200 min-h-screen"
           
         >
           {children}
@@ -192,7 +192,7 @@ function AppMenu({ isInline = false }) {
         {
           key: "4",
           label: (
-            <button><Link href="/builder">PC Builder</Link></button>
+            <button className="cursor-pointer  border border-[#3749bb] px-5 text-white rounded-md bg-[#3749bb] text-sm h-10"><Link href="/builder">PC Builder</Link></button>
           ),
         },
       ]}

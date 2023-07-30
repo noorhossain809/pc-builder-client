@@ -22,33 +22,25 @@ const AllProducts = ({ allProducts }) => {
       >
        Featured Category
       </h1>
-      <Row
-      justify="center"
-        gutter={{
-          xs: 8,
-          sm: 16,
-          md: 24,
-          lg: 32,
-        }}
+      <div className="grid grid-cols-4"
+      
       >
         {allProducts?.data?.map((product) => (
-          <Col key={product._id} className="gutter-row"  span={5} style={{margin: 12}}>
-            <Card
-              hoverable
-               cover={
-                <Image
+          <div key={product._id} className="gutter-row"  span={5} style={{margin: 12}}>
+            <div className="card bg-white pb-2">
+               <Image
                   src={product?.image}
-                  width={500}
+                  width={300}
                   height={200}
                   responsive
                   alt="product image"
                 />
-              }
-            >
-              <Meta title={product?.productName} />
+             <Link href={`/product/${product?._id}`}>
+              <h2 className="tex-base mx-4 font-normal hover:text-red-600 hover:underline">{product?.productName}</h2>
+             </Link>
 
               
-              <div className="flex ">
+              <div className="flex mx-4">
                 <p
                 style={{
                   display: "flex",
@@ -75,8 +67,8 @@ const AllProducts = ({ allProducts }) => {
                 {product?.status}
               </p>
               </div>
-              <Rate allowHalf defaultValue={4.5} />
-              <p
+              <Rate style={{marginLeft: '10px'}} allowHalf defaultValue={4.5} />
+              <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -86,7 +78,7 @@ const AllProducts = ({ allProducts }) => {
                   fontSize: "12px",
                 }}
               >
-                <div>
+                <div className="mx-4">
                   {
                     product?.category?.map(item => (
                       <>
@@ -100,7 +92,7 @@ const AllProducts = ({ allProducts }) => {
                     ))
                   }
                 </div>
-              </p>
+              </div>
 
               <Link href={`/product/${product?._id}`}>
                 <p
@@ -116,13 +108,13 @@ const AllProducts = ({ allProducts }) => {
                     textAlign: "center",
                   }}
                 >
-                  Details <ArrowRightOutlined />
+                  Details
                 </p>
               </Link>
-            </Card>
-          </Col>
+            </div>
+          </div>
         ))}
-      </Row>
+      </div>
     </>
   );
 };
